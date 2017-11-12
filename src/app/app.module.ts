@@ -10,10 +10,17 @@ import "hammerjs";
 
 import { QuestionDetailComponent } from "./question/question-detail.component";
 
+import { MomentModule } from 'angular2-moment';
+import { AnswerFormComponent } from "./answer/answer-form.component";
+import { FormsModule } from "@angular/forms";
+
 @NgModule({
-  declarations: [AppComponent, QuestionDetailComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
+  declarations: [AppComponent, QuestionDetailComponent
+    , AnswerFormComponent
+  ],
+  imports: [BrowserModule, BrowserAnimationsModule, MaterialModule, MomentModule, FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
