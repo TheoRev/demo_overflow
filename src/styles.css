@@ -5,3 +5,11 @@ body {
   margin: 0;
   font-family: 'Roboto';
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 40px auto;
+  /* margin-bottom: 40px; */
+}
