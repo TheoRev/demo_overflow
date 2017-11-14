@@ -18,6 +18,7 @@ import { AnswerFormComponent } from './answer/answer-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionListComponent } from './question/question-list.component';
 import { Routing } from './app.routing';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { Routing } from './app.routing';
     MomentModule,
     FormsModule,
     ReactiveFormsModule,
-    Routing
+    Routing,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

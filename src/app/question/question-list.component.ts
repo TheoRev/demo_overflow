@@ -1,21 +1,23 @@
 import { Question } from './question.model';
-import { Component } from '@angular/core';
-
-const q = new Question(
-  '¿Cómo reutilizo un componente en Android?',
-  'Miren, esta es mi pregunta...',
-  new Date(),
-  // 'devicon-android-plain'
-  'none'
-);
+import { Component, OnInit } from '@angular/core';
+import { QuestionService } from './question.service';
 
 @Component({
   selector: 'app-question-list',
   templateUrl: './question-list.component.html',
-  styleUrls: [
-    './question-list.component.css'
-  ]
+  styleUrls: ['./question-list.component.css'],
+  providers: [QuestionService]
 })
-export class QuestionListComponent {
-  questions: Question[] = new Array(10).fill(q);
+export class QuestionListComponent implements OnInit {
+  questions: Question[];
+  loading = true;
+
+  constructor(private questionService: QuestionService) {}
+
+  ngOnInit() {
+    this.questionService.getQuestions().then((questions: Question[]) => {
+      this.questions = questions;
+      this.loading = false;
+    });
+  }
 }
